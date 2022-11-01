@@ -6,7 +6,7 @@ function ProfileScreen() {
     <View style = {styles.container}>
         <View style = {styles.userInforWraper}>
             <Image
-            source={require("../images/proPicture.png")}
+            source={require("../../../images/proPicture.png")}
             />
             <View style = {styles.userInforData}>
                 <Text style={{fontSize: 20, fontWeight: '700', color: '#091C3F'}}>Hi, Ben Cline</Text>
@@ -17,73 +17,73 @@ function ProfileScreen() {
             <View style = {styles.profileItems}>
                 <Image
                 style = {{marginRight: 20}}
-                source={require("../images/privateAcc.png")}
+                source={require("../../../images/privateAcc.png")}
                 />
                 <View style = {styles.Items}>
                     <Text>Private Account</Text>
                     <Image
                     style = {{alignSelf: 'flex-end'}}
-                    source={require("../images/seemore.png")}
+                    source={require("../../../images/seemore.png")}
                     />
                 </View>
             </View>
             <View style = {styles.profileItems}>
                 <Image
                 style = {{marginRight: 20}}
-                source={require("../images/consult.png")}
+                source={require("../../../images/consult.png")}
                 />
                 <View style = {styles.Items}>
                     <Text>My Consults</Text>
                     <Image
-                    source={require("../images/seemore.png")}
+                    source={require("../../../images/seemore.png")}
                     />
                 </View>
             </View>
             <View style = {styles.profileItems}>
                 <Image
                 style = {{marginRight: 20}}
-                source={require("../images/order.png")}
+                source={require("../../../images/order.png")}
                 />
                 <View style = {styles.Items}>
                     <Text>My orders</Text>
                     <Image
-                    source={require("../images/seemore.png")}
+                    source={require("../../../images/seemore.png")}
                     />
                 </View>
             </View>
             <View style = {styles.profileItems}>
                 <Image
                 style = {{marginRight: 20}}
-                source={require("../images/billing.png")}
+                source={require("../../../images/billing.png")}
                 />
                 <View style = {styles.Items}>
                     <Text>Billing</Text>
                     <Image
-                    source={require("../images/seemore.png")}
+                    source={require("../../../images/seemore.png")}
                     />
                 </View>
             </View>
             <View style = {styles.profileItems}>
                 <Image
                 style = {{marginRight: 20}}
-                source={require("../images//faq.png")}
+                source={require("../../../images//faq.png")}
                 />
                 <View style = {styles.Items}>
                     <Text>Faq</Text>
                     <Image
-                    source={require("../images/seemore.png")}
+                    source={require("../../../images/seemore.png")}
                     />
                 </View>
             </View>
             <View style = {styles.profileItems}>
                 <Image
                 style = {{marginRight: 20}}
-                source={require("../images/setting.png")}
+                source={require("../../../images/setting.png")}
                 />
                <View style = {styles.Items}>
                 <Text>Settings</Text>
                     <Image
-                    source={require("../images/seemore.png")}
+                    source={require("../../../images/seemore.png")}
                     />
                </View>
             </View>
