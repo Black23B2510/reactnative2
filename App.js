@@ -3,11 +3,12 @@ import { Text, Image, View, SafeAreaView, TouchableOpacity, RefreshControl, Flat
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MyNavigation from './src/screens/Navigation';
-// import Products from './src/screens/Products';
-// import Home from './src/screens/Home/HomeDog';
-// import listPet from './src/screens/Products/listPets';
-// import TodoHome from './src/screens/todoList/Home';
-// import PropsPractice from './src/screens/Props/PropsPractice';
+import Products from './src/screens/Products';
+import Home from './src/screens/Home/HomeDog';
+import listPet from './src/screens/Products/listPets';
+import TodoHome from './src/screens/todoList/Home';
+import DisplayName from './src/screens/Props/DisplayName';
+import { HomeScreen } from './src/shop/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +33,7 @@ const App = () => {
 //TODOLIST
 // const App = () => {
 //   return(
-//     <PropsPractice/>
+//     <HomeScreen/>
 //   )
 // }
 // <SafeAreaView style={{flex: 1}}>

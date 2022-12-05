@@ -25,7 +25,7 @@ const listPeThiss = [
     },
     {
         id:'2',
-        name: 'Pull xii',
+        name: 'Pull xiiii',
         price: '56',
         age:'8 month',
         gender:'Male',

@@ -9,6 +9,13 @@ const TodoHome = () => {
     const handleAddTasks = (task) => {
         setTaskList([...taskList, task]);
     }
+
+    const handleDelete = ( index ) => {
+        let listTaskTmp = [...taskList];
+        listTaskTmp.splice(index, 1);
+        setTaskList(listTaskTmp);
+        alert('Delete task successfully!')
+    }
     return (
         <View style={styles.container}>
             <View style={styles.body}>
@@ -16,7 +23,7 @@ const TodoHome = () => {
                 <ScrollView showsVerticalScrollIndicator = {false}>
                 {
                     taskList.map( (item, index) =>{
-                        return <Tasks key={index} title={item} number={index+1}/>
+                        return <Tasks key={index} title={item} number={index+1} onDeleteTask = { handleDelete}/>
                     })
                 }
                 </ScrollView>

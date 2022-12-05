@@ -120,67 +120,6 @@ export default function Products({navigation}) {
   //   }
   // ]);
   return (
-    // <SafeAreaView style={styles.container}>
-    //   <View style={styles.banner}>
-    //     <ImageBackground source={require("../../../images/banner.png")} style={styles.image}>
-    //       <View style={styles.txtGroup}>
-    //         <Text style={styles.text}>Save extra on every order</Text>
-    //         <Text style={styles.txt}>Etiam mollis metus non faucibus sollicitudin.</Text>
-    //       </View>
-    //     </ImageBackground>
-    //   </View>
-    //   <View style={styles.product}>
-    //     <Text style={styles.title}>
-    //       Diabetic Diet
-    //     </Text>
-    //     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-    //       <FlatList
-    //         horizontal
-    //         data={products}
-    //         keyExtractor={item => item.id}
-    //         renderItem={({ item }) => {
-    //           return <View
-    //             style={styles.item}>
-    //             <Image
-    //               style={{
-    //                 width: 110,
-    //                 height: 100,
-    //               }}
-    //               source={item.img} />
-    //             <Text
-    //               style={styles.itemName}>{item.name}</Text>
-    //           </View>
-    //         }}>
-    //       </FlatList>
-    //     </ScrollView>
-    //   </View>
-    //   <View style={styles.allProducts}>
-    //     <Text style={styles.titlePro}>All Products</Text>
-    //     <ScrollView showsVerticalScrollIndicator={false}>
-    //       <FlatList
-    //         numColumns={2}
-    //         data={listProducts}
-    //         keyExtractor={item => item.name}
-    //         renderItem={({ item }) => {
-    //           return <View style={styles.bgListProducts}>
-    //             <View style={{
-    //               width: 167,
-    //               height: 158,
-    //               backgroundColor: '#EBEBEB'
-    //             }}>
-    //               <Image
-    //                 style={styles.img}
-    //                 source={item.img}
-    //               />
-    //             </View>
-    //             <Text style={styles.proName}>{item.name}</Text>
-    //             <Text style={styles.proPrice}>${item.price}</Text>
-    //           </View>
-    //         }}>
-    //       </FlatList>
-    //     </ScrollView>
-    //   </View>
-    // </SafeAreaView>
     <SafeAreaView style={{ flex: 1, margin: 12 }}>
       <View style={styles.header}>
         <Image
@@ -219,10 +158,17 @@ export default function Products({navigation}) {
       >
       </FlatList>
       <FlatList
-      showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
         data={listPet}
         renderItem={renderItem}
         keyExtractor={item => item.id}
+        refreshControl={
+          <RefreshControl
+          refreshing={false}
+          onRefresh={() => {
+            setListPet(listPet);
+          }}/>
+      }
       >
       </FlatList>
     </SafeAreaView>
@@ -368,3 +314,65 @@ const styles = StyleSheet.create({
     marginLeft: 12
   }
 });
+
+    // <SafeAreaView style={styles.container}>
+    //   <View style={styles.banner}>
+    //     <ImageBackground source={require("../../../images/banner.png")} style={styles.image}>
+    //       <View style={styles.txtGroup}>
+    //         <Text style={styles.text}>Save extra on every order</Text>
+    //         <Text style={styles.txt}>Etiam mollis metus non faucibus sollicitudin.</Text>
+    //       </View>
+    //     </ImageBackground>
+    //   </View>
+    //   <View style={styles.product}>
+    //     <Text style={styles.title}>
+    //       Diabetic Diet
+    //     </Text>
+    //     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+    //       <FlatList
+    //         horizontal
+    //         data={products}
+    //         keyExtractor={item => item.id}
+    //         renderItem={({ item }) => {
+    //           return <View
+    //             style={styles.item}>
+    //             <Image
+    //               style={{
+    //                 width: 110,
+    //                 height: 100,
+    //               }}
+    //               source={item.img} />
+    //             <Text
+    //               style={styles.itemName}>{item.name}</Text>
+    //           </View>
+    //         }}>
+    //       </FlatList>
+    //     </ScrollView>
+    //   </View>
+    //   <View style={styles.allProducts}>
+    //     <Text style={styles.titlePro}>All Products</Text>
+    //     <ScrollView showsVerticalScrollIndicator={false}>
+    //       <FlatList
+    //         numColumns={2}
+    //         data={listProducts}
+    //         keyExtractor={item => item.name}
+    //         renderItem={({ item }) => {
+    //           return <View style={styles.bgListProducts}>
+    //             <View style={{
+    //               width: 167,
+    //               height: 158,
+    //               backgroundColor: '#EBEBEB'
+    //             }}>
+    //               <Image
+    //                 style={styles.img}
+    //                 source={item.img}
+    //               />
+    //             </View>
+    //             <Text style={styles.proName}>{item.name}</Text>
+    //             <Text style={styles.proPrice}>${item.price}</Text>
+    //           </View>
+    //         }}>
+    //       </FlatList>
+    //     </ScrollView>
+    //   </View>
+    // </SafeAreaView>

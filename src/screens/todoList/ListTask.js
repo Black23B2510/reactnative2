@@ -1,12 +1,28 @@
-import { View, SafeAreaView, Text, StyleSheet, Image, FlatList, ImageBackground, ScrollView, Button, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import React, { useState } from 'react';
 
 const Tasks = (props) => {
-    const {number} = props;
+    const { number } = props;
     const numberText = number < 10 ? `0${number}` : number;
     const itemBg = number % 2 === 0 ? styles.even : styles.odd;
+
+    const handleDeleteTask = () =>{
+        Alert.alert(
+            "Delete Task",
+            "DO you want to delete this task?",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => {},
+                },
+                { text: "OK", onPress: () => props.onDeleteTask(props.index) }
+            ]
+        )};
+
     return (
-        <TouchableOpacity style={styles.listWraper}>
+        <TouchableOpacity style={styles.listWraper}
+            onPress={handleDeleteTask}
+        >
             <View style={styles.item}>
                 <Text style={[styles.no, itemBg]}>{numberText}</Text>
                 <Text style={styles.task}>{props.title}</Text>
@@ -37,11 +53,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '400'
     },
-    even:{
+    even: {
         borderColor: 'lightgreen',
         backgroundColor: 'lightgreen'
     },
-    odd:{
+    odd: {
         borderColor: '#53d6f2',
         backgroundColor: '#53d6f2'
     },
